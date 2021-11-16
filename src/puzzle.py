@@ -5,6 +5,10 @@ class Puzzle:
     def __init__(this):
         this.board = this._generate_empty_board()
 
+        #Fitness is used in some of the algorithms.
+        #We use a low value as high fitness
+        this.fitness = 9999
+
     
     def set_value(this, x:int, y:int, value):
         this.board[y][x] = value
@@ -14,6 +18,24 @@ class Puzzle:
             Returns value at index
         '''
         return this.board[y][x]
+
+    def set_fitness(this, fitness:int):
+        this.fitness = fitness
+
+    def get_fitness(this):
+        return this.fitness
+
+
+    def validate_field(this, x:int, y:int):
+        '''
+            Checks all three constraints for a given field.
+        '''
+
+        #This notation is used, so that if a validation fails, we can immediately return false without having
+        #to execute the other evaluations.
+        if not this.validate_square(x, y) or not this.validate_column(x) or not this.validate_row(y):
+            return False
+
 
     def validate_square(this, x:int, y:int):
         '''
