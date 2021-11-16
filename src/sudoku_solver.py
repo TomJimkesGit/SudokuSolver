@@ -7,27 +7,35 @@ class SudokuSolver:
         this.puzzle = Puzzle()
 
     def read_from_file(this, path):
+        '''
+            Read a puzzle from a file
+        '''
         reader = Reader()
         this.puzzle = reader.read_from_file(path)
         this.initial_state = reader.read_from_file(path)
-
-    def print_to_console(this):
-        this.puzzle.print_to_console()
         
     def validate_puzzle(this):
-
+        '''
+            Will check each row, col and square to see if the puzzle is valid.
+        '''
         for i in range(0,9):
             if not this.puzzle.validate_column(i):
-                print(F"Invalid Column at {i}")
-                return
+                return False
             if not this.puzzle.validate_row(i):
-                print(F"Invalid Row at {i}")
-                return
-            if not this.puzzle.validate_square(i):
-                print(F"Invalid Square at {i}")
-                return
-        
-        print("Puzzle is valid")
+                return False
+
+        for i in range(0, 3):
+            for j in range(0,3):
+                if not this.puzzle.validate_square(i*3, j*3):
+                    return False
+
+    def get_puzzle(this):
+        '''
+            Will return a puzzle in list of lists format.
+        '''
+
+        return this.puzzle.board
+
 
 
     
