@@ -13,6 +13,13 @@ class SudokuSolver:
         reader = Reader()
         this.puzzle = reader.read_from_file(path)
         this.initial_state = reader.read_from_file(path)
+
+    def read_from_lines(this, lines):
+
+        this.puzzle = Puzzle()
+        this.initial_state = Puzzle()
+        this.puzzle.parse_from_lines(lines)
+        this.initial_state.parse_from_lines(lines)
         
     def validate_puzzle(this):
         '''

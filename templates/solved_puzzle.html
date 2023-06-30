@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+<body>
+   <h1>Sudoku Solver</h1>
+   <div class="content">
+        <div class="puzzle">
+            {% for row in puzzle %}
+                <div class="puzzle-row">
+                {% for el in row %}
+                    <div class="puzzle-square">
+                        {{el}}
+                    </div>
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+
+</body>
+</html>

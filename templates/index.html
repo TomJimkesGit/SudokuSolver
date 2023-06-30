@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+</head>
+<body>
+   <h1>Sudoku Solver</h1>
+   <div class="content">
+
+    <form id="submit_grid" action="{{ url_for('submit_grid') }}" method="post">
+        <div class="puzzle">
+            {% for n in range(0, 9) %}
+                <div class="puzzle-row">
+                {% for m in range(0, 9) %}
+                    <textarea class="puzzle-square" name="{{n}}-{{m}}" id="" cols="1" rows="1" maxlength="1"></textarea>
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+        <input type="submit">
+    </form>
+
+
+    <br />
+    <br />
+
+    <form id="submit_text" name="submit_text" action="{{ url_for('submit_text') }}" method="post">
+        <textarea name="text_input" cols="9" rows="9"></textarea>
+        <input type="submit">
+    </form>
+</body>
+</html>

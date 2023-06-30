@@ -16,3 +16,5 @@ class Reader:
 
         file.close()
         return puzzle
+
+    

@@ -87,7 +87,7 @@ class Puzzle:
         return -1, -1
                 
 
-    def _validate_list(this, elements:[]):
+    def _validate_list(this, elements):
         '''
             Validates a list of elements
         '''
@@ -98,7 +98,7 @@ class Puzzle:
         return len(filtered) == len(set(filtered))
 
     
-    def parse_from_lines(this, lines: []):
+    def parse_from_lines(this, lines):
         '''
             The file reader will open a file and retrieve the individual lines of text.
             These lines are parsed into the board object in this function.

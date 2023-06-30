@@ -1,0 +1,33 @@
+h1 {
+    border: 2px #eee solid;
+    color: brown;
+    text-align: center;
+    padding: 10px;
+}
+
+.content {
+    width: 600px;
+}
+
+.puzzle {
+    width: 270px;
+    height: 270px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin-left:auto;
+}
+
+.puzzle-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.puzzle-square {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    border: 1px solid black;
+    resize:none;
+}
